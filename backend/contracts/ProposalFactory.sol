@@ -8,13 +8,17 @@ import "./Verification.sol";
 
 contract ProposalFactory {
     address[] public proposals;
+    address public verification;
 
     constructor(){
-        Verification(__).balanceOf()
+        verification = Verification(_VerificationAddress); 
     }
 
-    function createProposal(string memory _beneficiariesAndSuppliers, uint256 _targetDonation) public {
-        Proposal newProposal = new Proposal(_beneficiariesAndSuppliers, _targetDonation);
+    function createProposal(address[] memory _suppliers, uint256 _targetDonation) public {
+        for(uint256 i = 0; i<_suppliers.length;i++){
+            require(verification.balanceOf(_suppliers[i],1));
+        }
+        Proposal newProposal = new Proposal(msg.sender, _suppliers, _targetDonation, allocation);
         proposals.push(address(newProposal));
     }
 }
