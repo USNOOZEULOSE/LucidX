@@ -3,8 +3,6 @@ import { Chart } from "chart.js/auto";
 import { useContext, useEffect, useState } from "react";
 
 export default function WalletDisplay() {
-
-
   useEffect(() => {
     // Initialize the chart within the useEffect hook to ensure the DOM is ready.
     const beginnerElement = document.getElementById("donations");
@@ -50,10 +48,13 @@ export default function WalletDisplay() {
       type: "bar", // Specify the chart type as horizontalBar
       data: data1,
       options: {
-        indexAxis: "y", 
+        indexAxis: "y",
         scales: {
           x: {
-            beginAtZero: true,
+            display: false,
+          },
+          y: {
+            grid: { display: false },
           },
         },
       },
@@ -61,17 +62,27 @@ export default function WalletDisplay() {
   }, []);
   return (
     <div>
-        <div className="flex flex-row">
-          <div className="flex flex-col w-1/2">
-            <div className="text-4xl font-bold m-4">Hello, Welcome to LucidX</div>
-            <div className="bg-gradient-to-t from-indigo-300 to-indigo-300 w-full h-[500px]">
-              <canvas id="donations"></canvas>
-            </div>
-          </div>
-          <div className="w-1/2">
-          <canvas className="mt-10 w-1/2 overflow-hidden h-[300px]" id="donationsBar"></canvas>
+      <div className="flex flex-row">
+        <div className="flex flex-col w-1/2 p-4">
+          <div className="text-4xl font-bold m-4">Hello, Welcome to LucidX</div>
+          <div className="bg-gradient-to-t from-indigo-300 to-indigo-300 w-full h-[500px]">
+            <canvas
+                className="rounded-3xl"
+              id="donations"
+              style={{
+                background: `linear-gradient(0deg, rgba(158, 183, 229, 0.54) 3.17%, rgba(158, 183, 229, 0.00) 147.39%);
+`,
+              }}
+            ></canvas>
           </div>
         </div>
+        <div className="w-1/2 p-4">
+          <canvas
+            className="mt-10 w-1/2 overflow-hidden h-[300px]"
+            id="donationsBar"
+          ></canvas>
+        </div>
+      </div>
     </div>
   );
 }
