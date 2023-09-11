@@ -12,6 +12,10 @@ export default function WalletDisplay() {
   useEffect(() => {
     // Initialize the chart within the useEffect hook to ensure the DOM is ready.
     const beginnerElement = document.getElementById("donations");
+    const existingChart = Chart.getChart(beginnerElement);
+    if (existingChart) {
+      existingChart.destroy();
+    }
     const data = {
       labels: ["Unicef", "Gates Foundation", "America Cander Foundation"],
       datasets: [
