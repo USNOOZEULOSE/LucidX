@@ -45,17 +45,21 @@ export default function donorPagewithId({ params }) {
       <div className=" gap-x-4 m-6 grid grid-cols-2 ">
         {selectedNGO.projects.map((project) => (
           <Card
-            className="w-full h-auto p-4 rounded-lg shadow-lg "
+            className="w-full h-auto p-4 rounded-lg"
+            style={{
+              borderRadius: "45px",
+              background: "rgba(158, 183, 229, 0.33)",
+              boxShadow: "0px 3px 13px 7px rgba(0, 0, 0, 0.25)",
+            }}
             horizontal
             imgSrc="https://media.istockphoto.com/id/956468886/photo/elderly-woman-sitting-at-the-table-counting-money-in-her-wallet.jpg?s=612x612&w=0&k=20&c=79-BGvIgkU-68-2q7bCS1Y39bjohmz9fe5hvm6tg2lo="
           >
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {project}
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900">
+              {project.name}
             </h5>
-            <div className="font-normal text-gray-700 dark:text-gray-400">
+            <div className="font-normal text-gray-900">
               <div>
-                Here are the biggest enterprise technology acquisitions of 2021
-                so far, in reverse chronological order.
+                {project.description}
               </div>
             </div>
           </Card>
