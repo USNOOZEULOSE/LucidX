@@ -6,20 +6,26 @@
     "projects": [
       {
         "name": "Education for All",
-        "description": "Provides quality education and learning opportunities to children from disadvantaged backgrounds."
+        "description": "Provides quality education and learning opportunities to children from disadvantaged backgrounds.",
+        "Objective": "Provide temporary shelter and support to families in need.",
+        "Currentsituation": "The organization is actively involved in various projects to uplift underprivileged communities.",
+        "Proposal": "Seeking collaboration and resources to continue their mission of empowerment and social change."
       },
       {
         "name": "Healthcare Initiative",
-        "description": "Offers accessible healthcare services and medical support to underserved communities."
+        "description": "Offers accessible healthcare services and medical support to underserved communities.",
+        "Objective": "Provide temporary shelter and support to families in need.",
+        "Currentsituation": "The organization is actively involved in various projects to uplift underprivileged communities.",
+        "Proposal": "Seeking collaboration and resources to continue their mission of empowerment and social change."
       },
       {
         "name": "Women's Empowerment",
-        "description": "Empowers women with skills, resources, and support to improve their lives and communities."
+        "description": "Empowers women with skills, resources, and support to improve their lives and communities.",
+        "Objective": "Provide temporary shelter and support to families in need.",
+        "Currentsituation": "The organization is actively involved in various projects to uplift underprivileged communities.",
+        "Proposal": "Seeking collaboration and resources to continue their mission of empowerment and social change."
       }
-    ],
-    "Objective": "Provide temporary shelter and support to families in need.",
-    "Current situation": "The organization is actively involved in various projects to uplift underprivileged communities.",
-    "Proposal": "Seeking collaboration and resources to continue their mission of empowerment and social change."
+    ]
   },
   {
     "ngoName": "worldpoverty",
@@ -28,16 +34,19 @@
     "projects": [
       {
         "name": "Food Distribution Program",
-        "description": "Distributes food and meals to families facing food insecurity."
+        "description": "Distributes food and meals to families facing food insecurity.",
+        "Objective": "Provide sufficient clothing and essential resources to those in need.",
+        "Currentsituation": "The organization is actively working to address poverty and food scarcity issues.",
+        "Proposal": "Seeking support and resources to continue their efforts to combat poverty."
       },
       {
         "name": "Microfinance for Entrepreneurs",
-        "description": "Provides microloans and support to local entrepreneurs to alleviate poverty."
+        "description": "Provides microloans and support to local entrepreneurs to alleviate poverty.",
+        "Objective": "Provide sufficient clothing and essential resources to those in need.",
+        "Currentsituation": "The organization is actively working to address poverty and food scarcity issues.",
+        "Proposal": "Seeking support and resources to continue their efforts to combat poverty."
       }
-    ],
-    "Objective": "Provide sufficient clothing and essential resources to those in need.",
-    "Current situation": "The organization is actively working to address poverty and food scarcity issues.",
-    "Proposal": "Seeking support and resources to continue their efforts to combat poverty."
+    ]
   },
   {
     "ngoName": "worldwildlife",
@@ -46,16 +55,19 @@
     "projects": [
       {
         "name": "Reforestation Project",
-        "description": "Aims to restore deforested areas and protect biodiversity through tree planting."
+        "description": "Aims to restore deforested areas and protect biodiversity through tree planting.",
+        "Objective": "Provide food and resources for 896 refugees in need.",
+        "Currentsituation": "The organization is actively engaged in conservation efforts worldwide.",
+        "Proposal": "Seeking support to continue their mission of environmental conservation and protection."
       },
       {
         "name": "Clean Water Initiative",
-        "description": "Works to provide access to clean and safe drinking water sources."
+        "description": "Works to provide access to clean and safe drinking water sources.",
+        "Objective": "Provide food and resources for 896 refugees in need.",
+        "Currentsituation": "The organization is actively engaged in conservation efforts worldwide.",
+        "Proposal": "Seeking support to continue their mission of environmental conservation and protection."
       }
-    ],
-    "Objective": "Provide food and resources for 896 refugees in need.",
-    "Current situation": "The organization is actively engaged in conservation efforts worldwide.",
-    "Proposal": "Seeking support to continue their mission of environmental conservation and protection."
+    ]
   },
   {
     "ngoName": "animalplanet",
@@ -64,15 +76,18 @@
     "projects": [
       {
         "name": "Animal Shelter and Adoption Program",
-        "description": "Operates shelters and facilitates pet adoptions to find loving homes for animals in need."
+        "description": "Operates shelters and facilitates pet adoptions to find loving homes for animals in need.",
+        "Objective": "Provide shelter and support for Ukrainian refugees.",
+        "Currentsituation": "The organization is actively involved in animal welfare initiatives.",
+        "Proposal": "Seeking support to continue their work in promoting responsible pet ownership and animal welfare."
       },
       {
         "name": "Spay/Neuter Campaign",
-        "description": "Promotes responsible pet ownership and controls the pet population through spaying and neutering."
+        "description": "Promotes responsible pet ownership and controls the pet population through spaying and neutering.",
+        "Objective": "Provide shelter and support for Ukrainian refugees.",
+        "Currentsituation": "The organization is actively involved in animal welfare initiatives.",
+        "Proposal": "Seeking support to continue their work in promoting responsible pet ownership and animal welfare."
       }
-    ],
-    "Objective": "Provide shelter and support for Ukrainian refugees.",
-    "Current situation": "The organization is actively involved in animal welfare initiatives.",
-    "Proposal": "Seeking support to continue their work in promoting responsible pet ownership and animal welfare."
+    ]
   }
 ]
