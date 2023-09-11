@@ -12,7 +12,7 @@ contract ProposalFactory {
     Verification public verification;
 
     constructor(){
-        verification = Verification(); 
+        verification = Verification(0x17C698d0e7435dEbCD0Fb5a250d3046a436039Dc); 
     }
 
     function createProposal(address[] memory _suppliers, uint256 _targetDonation,uint256[] memory _allocation, uint256 _duration) public {
