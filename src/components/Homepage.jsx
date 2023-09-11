@@ -4,7 +4,6 @@ import Link from "next/link";
 import React, { createContext, useState } from "react";
 import WalletDisplay from "./WalletDisplay";
 
-
 export const Homepage = ({ isUserLoggedIn }) => {
   const [connecting, setConnecting] = useState(false);
 
@@ -19,10 +18,9 @@ export const Homepage = ({ isUserLoggedIn }) => {
             <div
               className="w-[800px] h-[450px] rounded-3xl bg-cover bg-center bg-black bg-opacity-30 bg-blend-multiply"
               style={{
-                backgroundImage: `url('assets/images/morocco-earthquake.jpg')`
+                backgroundImage: `url('assets/images/morocco-earthquake.jpg')`,
               }}
             >
-            
               <p class="text-gray-600 mt-1"> this is an image</p>
               hi3
             </div>
@@ -41,33 +39,28 @@ export const Homepage = ({ isUserLoggedIn }) => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-20 flex-grow">
+          <div className="flex flex-col gap-4 flex-grow ml-3">
             <div
-              className="w-200 h-100"
+              className="w-200 h-100 rounded-3xl flex-grow "
               style={{
-                backgroundImage: new URL(
-                  "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fukraine-people&psig=AOvVaw2jksKQevHYdKo6ZfdGhpeg&ust=1694491753321000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCPCAherXoYEDFQAAAAAdAAAAABAE"
-                ),
+                backgroundImage: `url('assets/images/morocco-earthquake.jpg')`,
               }}
             >
-              <Link href="/ngo">This is to ngo</Link>
+              <Link href={"/ngo/worldwildlife"}>hi</Link>
             </div>
+
             <div
-              className="w-200 h-100"
+              className="w-200 h-100 rounded-3xl flex-grow"
               style={{
-                backgroundImage: new URL(
-                  "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fukraine-people&psig=AOvVaw2jksKQevHYdKo6ZfdGhpeg&ust=1694491753321000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCPCAherXoYEDFQAAAAAdAAAAABAE"
-                ),
+                backgroundImage: `url('assets/images/morocco-earthquake.jpg')`,
               }}
             >
               hi
             </div>
             <div
-              className="w-200 h-100 rounded"
+              className="w-200 h-100 rounded-3xl flex-grow"
               style={{
-                backgroundImage: new URL(
-                  "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fukraine-people&psig=AOvVaw2jksKQevHYdKo6ZfdGhpeg&ust=1694491753321000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCPCAherXoYEDFQAAAAAdAAAAABAE"
-                ),
+                backgroundImage: `url('assets/images/morocco-earthquake.jpg')`,
               }}
             >
               hi
