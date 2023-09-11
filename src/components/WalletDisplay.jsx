@@ -75,7 +75,7 @@ export default function WalletDisplay() {
       {connected ? (
         <div className="flex flex-row">
           <div className="flex flex-col w-1/2">
-            <div className="text-4xl font-bold">Hello, Welcome to LucidX</div>
+            <div className="text-4xl font-bold m-4">Hello, Welcome to LucidX</div>
             <div className="bg-gradient-to-t from-indigo-300 to-indigo-300 w-full h-[500px]">
               <canvas id="donations"></canvas>
             </div>
