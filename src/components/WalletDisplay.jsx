@@ -2,7 +2,7 @@
 import { Chart } from "chart.js/auto";
 import { useEffect, useState } from "react";
 
-export default function WalletDisplay() {
+export default function WalletDisplay({isUserLoggedIn}) {
   // const organisations = ["Unicef","UNHR","Gate Foundation"]
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export default function WalletDisplay() {
   }, []);
   return (
     <div>
-        <div className="flex flex-row">
+        {isUserLoggedIn?<div className="flex flex-row">
           <div className="flex flex-col w-1/2">
             <div className="text-4xl font-bold m-4">Hello, Welcome to LucidX</div>
             <div className="bg-gradient-to-t from-indigo-300 to-indigo-300 w-full h-[500px]">
@@ -78,7 +78,7 @@ export default function WalletDisplay() {
           <div className="w-1/2">
           <canvas className="mt-10 w-1/2 overflow-hidden h-[300px]" id="donationsBar"></canvas>
           </div>
-        </div>
+        </div>:<div>Please log in</div>}
     </div>
   );
 }
