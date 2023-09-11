@@ -10,6 +10,11 @@
 
 # next.js
 src/.next/
+src/.next/cache/
+src/.next/server/
+src/next/static/
+src/.next/app-build-manifest
+/.next/
 /out/
 
 # production
