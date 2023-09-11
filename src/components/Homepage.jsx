@@ -1,5 +1,6 @@
 import { Button } from "flowbite-react";
 import { redirect } from "next/dist/server/api-utils";
+import Link from "next/link";
 import React, { createContext, useState } from "react";
 import WalletDisplay from "./WalletDisplay";
 
@@ -49,7 +50,7 @@ export const Homepage = ({ isUserLoggedIn }) => {
                 ),
               }}
             >
-              hi
+              <Link href="/ngo">This is to ngo</Link>
             </div>
             <div
               className="w-200 h-100"

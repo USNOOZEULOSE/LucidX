@@ -5,7 +5,7 @@ export default function donorPage() {
     <div>
       <div className="m-3">
         {/* <WalletDisplay /> */}
-        <Link href="/NGO/NGO1">to ngo1</Link> 
+        <Link href="/ngo/animalplanet">to ngo1</Link> 
       </div>
       <div>
       </div>
