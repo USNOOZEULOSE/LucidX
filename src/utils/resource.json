@@ -1,37 +1,93 @@
-  [
+[
   {
     "ngoName": "gatesfoundation",
+    "website":"https://www.gatesfoundation.org/",
     "vision": "Empowering underprivileged children for a brighter future",
-    "projects": ["Education for All", "Healthcare Initiative", "Women's Empowerment"],
-    "Objective": "Provide temporary Shelter",
-    "Current situation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque faucibus nulla aliquam sodales. Integer euismod, lectus eget commodo venenatis, ipsum tellus convallis ipsum, a maximus erat elit eget risus. Integer convallis eros velit. Donec elementum justo pellentesque bibendum molestie. Maecenas tempus tempor porta. Praesent varius purus quam, porttitor laoreet leo egestas id.",
-    "Proposal": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+    "projects": [
+      {
+        "name": "Education for All",
+        "description": "Provides quality education and learning opportunities to children from disadvantaged backgrounds.",
+        "Objective": "Provide temporary shelter and support to families in need.",
+        "Currentsituation": "The organization is actively involved in various projects to uplift underprivileged communities.",
+        "Proposal": "Seeking collaboration and resources to continue their mission of empowerment and social change."
+      },
+      {
+        "name": "Healthcare Initiative",
+        "description": "Offers accessible healthcare services and medical support to underserved communities.",
+        "Objective": "Provide temporary shelter and support to families in need.",
+        "Currentsituation": "The organization is actively involved in various projects to uplift underprivileged communities.",
+        "Proposal": "Seeking collaboration and resources to continue their mission of empowerment and social change."
+      },
+      {
+        "name": "Women's Empowerment",
+        "description": "Empowers women with skills, resources, and support to improve their lives and communities.",
+        "Objective": "Provide temporary shelter and support to families in need.",
+        "Currentsituation": "The organization is actively involved in various projects to uplift underprivileged communities.",
+        "Proposal": "Seeking collaboration and resources to continue their mission of empowerment and social change."
+      }
+    ]
   },
   {
     "ngoName": "worldpoverty",
+    "website": "https://worldpoverty.io/",
     "vision": "Fighting hunger and poverty in local communities",
-    "projects": ["Food Distribution Program", "Microfinance for Entrepreneurs"],
-    "Objective": "Provide Sufficient clothing",
-    "Current situation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque faucibus nulla aliquam sodales. Integer euismod, lectus eget commodo venenatis, ipsum tellus convallis ipsum, a maximus erat elit eget risus. Integer convallis eros velit. Donec elementum justo pellentesque bibendum molestie. Maecenas tempus tempor porta. Praesent varius purus quam, porttitor laoreet leo egestas id.",
-    "Proposal": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
-    
-
+    "projects": [
+      {
+        "name": "Food Distribution Program",
+        "description": "Distributes food and meals to families facing food insecurity.",
+        "Objective": "Provide sufficient clothing and essential resources to those in need.",
+        "Currentsituation": "The organization is actively working to address poverty and food scarcity issues.",
+        "Proposal": "Seeking support and resources to continue their efforts to combat poverty."
+      },
+      {
+        "name": "Microfinance for Entrepreneurs",
+        "description": "Provides microloans and support to local entrepreneurs to alleviate poverty.",
+        "Objective": "Provide sufficient clothing and essential resources to those in need.",
+        "Currentsituation": "The organization is actively working to address poverty and food scarcity issues.",
+        "Proposal": "Seeking support and resources to continue their efforts to combat poverty."
+      }
+    ]
   },
   {
     "ngoName": "worldwildlife",
+    "website": "https://www.worldwildlife.org/",
     "vision": "Conserving and protecting the environment for future generations",
-    "projects": ["Reforestation Project", "Clean Water Initiative"],
-    "Objective": "Provide foor for 896 refugees",
-    "Current situation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque faucibus nulla aliquam sodales. Integer euismod, lectus eget commodo venenatis, ipsum tellus convallis ipsum, a maximus erat elit eget risus. Integer convallis eros velit. Donec elementum justo pellentesque bibendum molestie. Maecenas tempus tempor porta. Praesent varius purus quam, porttitor laoreet leo egestas id.",
-    "Proposal": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+    "projects": [
+      {
+        "name": "Reforestation Project",
+        "description": "Aims to restore deforested areas and protect biodiversity through tree planting.",
+        "Objective": "Provide food and resources for 896 refugees in need.",
+        "Currentsituation": "The organization is actively engaged in conservation efforts worldwide.",
+        "Proposal": "Seeking support to continue their mission of environmental conservation and protection."
+      },
+      {
+        "name": "Clean Water Initiative",
+        "description": "Works to provide access to clean and safe drinking water sources.",
+        "Objective": "Provide food and resources for 896 refugees in need.",
+        "Currentsituation": "The organization is actively engaged in conservation efforts worldwide.",
+        "Proposal": "Seeking support to continue their mission of environmental conservation and protection."
+      }
+    ]
   },
   {
     "ngoName": "animalplanet",
+    "website": "https://www.animalplanet.com/",
     "vision": "Promoting animal welfare and responsible pet ownership",
-    "projects": ["Animal Shelter and Adoption Program", "Spay/Neuter Campaign"],
-    "Objective": "Provide shelter for ukrainian refugees",
-    "Current situation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque faucibus nulla aliquam sodales. Integer euismod, lectus eget commodo venenatis, ipsum tellus convallis ipsum, a maximus erat elit eget risus. Integer convallis eros velit. Donec elementum justo pellentesque bibendum molestie. Maecenas tempus tempor porta. Praesent varius purus quam, porttitor laoreet leo egestas id.",
-    "Proposal":"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
+    "projects": [
+      {
+        "name": "Animal Shelter and Adoption Program",
+        "description": "Operates shelters and facilitates pet adoptions to find loving homes for animals in need.",
+        "Objective": "Provide shelter and support for Ukrainian refugees.",
+        "Currentsituation": "The organization is actively involved in animal welfare initiatives.",
+        "Proposal": "Seeking support to continue their work in promoting responsible pet ownership and animal welfare."
+      },
+      {
+        "name": "Spay/Neuter Campaign",
+        "description": "Promotes responsible pet ownership and controls the pet population through spaying and neutering.",
+        "Objective": "Provide shelter and support for Ukrainian refugees.",
+        "Currentsituation": "The organization is actively involved in animal welfare initiatives.",
+        "Proposal": "Seeking support to continue their work in promoting responsible pet ownership and animal welfare."
+      }
+    ]
   }
 ]
-

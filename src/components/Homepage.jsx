@@ -8,9 +8,17 @@ export const Homepage = ({ isUserLoggedIn }) => {
   const [connecting, setConnecting] = useState(false);
 
   return (
-    <div className="flex flex-col gap-y-40">
+    <div className="flex flex-col gap-y-30">
       <div className="mt-3">
-        {isUserLoggedIn ? <WalletDisplay /> : <div>Please log in</div>}
+        {isUserLoggedIn ? <WalletDisplay /> : 
+          <div className="loginprom">
+              <div className="bg-[#d9d9d9]">
+                  <div className="font-semibold text-black text-[30px] tracking-[-0.85px] leading-[normal] text-center mb-3">
+                  Sign in to MetaMask to access the full detail
+                  </div>
+              </div>
+          </div>
+        }
       </div>
       <div>
         <div className="flex flex-row">
@@ -48,7 +56,6 @@ export const Homepage = ({ isUserLoggedIn }) => {
             >
               <Link href={"/ngo/worldwildlife"}>hi</Link>
             </div>
-
             <div
               className="w-200 h-100 rounded-3xl flex-grow"
               style={{

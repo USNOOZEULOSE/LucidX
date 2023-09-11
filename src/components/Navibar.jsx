@@ -51,7 +51,6 @@ export default function Navibar(){
       <div>
       <Navbar fluid style={navstyling}>
         <Navbar.Brand href="https://flowbite-react.com">
-
           <span className="self-center whitespace-nowrap  text-white text-xl font-semibold dark:text-white">
             LucidX
           </span>
