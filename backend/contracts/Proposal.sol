@@ -97,4 +97,12 @@ contract Proposal is ReentrancyGuard {
             return false;
         }
     }
+
+    function getCreator() public view returns(address){
+        return s_creator;
+    }
+    
+    function getCurrentFunding() public view returns(uint256){
+        return s_currentFunding;
+    }
 }
