@@ -1,15 +1,21 @@
 import { Button } from "flowbite-react";
 import { redirect } from "next/dist/server/api-utils";
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import WalletDisplay from "./WalletDisplay";
 
+const walletContext = createContext();
 export const Homepage = ({ isUserLoggedIn }) => {
   const [connecting, setConnecting] = useState(false);
+  console.log(isUserLoggedIn);
+  const staticProps = {isUserLoggedIn}
+  
 
   return (
     <div className="flex flex-col gap-y-40">
       <div className="mt-3">
-        <WalletDisplay {...isUserLoggedIn} />
+
+          <WalletDisplay {...staticProps}/>
+
       </div>
       <div>
         <div className="flex flex-row">
