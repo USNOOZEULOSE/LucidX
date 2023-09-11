@@ -53,14 +53,21 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div className="min-h-screen flex flex-col ">
-          <Navibar
-            isUserLoggedIn={isUserLoggedIn}
-            currentAccount={currentAccount}
-            connectWallet={connectWallet}
-          />
+          <div className=''>
+            <Navibar
+              isUserLoggedIn={isUserLoggedIn}
+              currentAccount={currentAccount}
+              connectWallet={connectWallet}
+            />
+          </div>
           {/* {children} */}
-          {cloneElement(children,{isUserLoggedIn: isUserLoggedIn, currentAccount: currentAccount})}
+          {cloneElement(children, {
+            isUserLoggedIn: isUserLoggedIn,
+            currentAccount: currentAccount,
+          })}
+          <div className='mt-auto'>
           <FooterBoard />
+          </div>
         </div>
       </body>
     </html>

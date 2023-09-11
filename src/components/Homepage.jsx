@@ -3,19 +3,17 @@ import { redirect } from "next/dist/server/api-utils";
 import React, { createContext, useState } from "react";
 import WalletDisplay from "./WalletDisplay";
 
-const walletContext = createContext();
+
 export const Homepage = ({ isUserLoggedIn }) => {
   const [connecting, setConnecting] = useState(false);
-  console.log(isUserLoggedIn);
-  const staticProps = {isUserLoggedIn}
+
+
   
 
   return (
     <div className="flex flex-col gap-y-40">
       <div className="mt-3">
-
-          <WalletDisplay {...staticProps}/>
-
+        {isUserLoggedIn ? <WalletDisplay /> : <div>Please log in</div>}
       </div>
       <div>
         <div className="flex flex-row">
