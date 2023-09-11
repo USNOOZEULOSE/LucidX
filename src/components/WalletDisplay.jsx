@@ -35,18 +35,54 @@ export default function WalletDisplay() {
       type: "doughnut",
       data: data,
     });
+    const beginnerElement2 = document.getElementById("donationsBar");
+
+    // Check if there is an existing chart on the 'donationsBar' canvas and destroy it.
+    const existingChart1 = Chart.getChart(beginnerElement2);
+    if (existingChart1) {
+      existingChart1.destroy();
+    }
+
+    const data1 = {
+      labels: ["2015", "2014"],
+      datasets: [
+        {
+          label: "Amount donated in a year",
+          data: [300, 150],
+          backgroundColor: [
+            "rgb(255, 99, 132)",
+            "rgb(54, 162, 235)",
+          ],
+          hoverOffset: 4,
+        },
+      ],
+    };
+    new Chart(beginnerElement2, {
+      type: "bar", // Specify the chart type as horizontalBar
+      data: data1,
+      options: {
+        indexAxis: "y", 
+        scales: {
+          x: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
   }, []);
   return (
     <div>
       {connected ? (
         <div className="flex flex-row">
-          <div className="flex flex-col">
+          <div className="flex flex-col w-1/2">
             <div className="text-4xl font-bold">Hello, Welcome to LucidX</div>
             <div className="bg-gradient-to-t from-indigo-300 to-indigo-300 w-full h-[500px]">
               <canvas id="donations"></canvas>
             </div>
           </div>
-          <canvas className="mt-10" id="donationsBar"></canvas>
+          <div className="w-1/2">
+          <canvas className="mt-10 w-1/2 overflow-hidden h-[300px]" id="donationsBar"></canvas>
+          </div>
         </div>
       ) : (
         <div className="bg-gradient-to-t from-indigo-300 to-indigo-300 w-full h-[500px] flex items-center justify-center">

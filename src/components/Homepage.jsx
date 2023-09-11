@@ -68,7 +68,7 @@ export const Homepage = () => {
             >
               hi
             </div>
-            <div className=" w-200 h-100 "><Button className="mb-auto ml-auto"></Button></div>
+            <div className=" "><Button className="mb-auto " href="/">More Organisations</Button></div>
           </div>
         </div>
       </div>
