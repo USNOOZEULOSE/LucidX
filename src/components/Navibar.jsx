@@ -3,6 +3,7 @@
 import { Navbar ,Button} from "flowbite-react"
 import { Homepage } from "./Homepage";
 import { useState, useEffect } from "react";
+import { redirect } from "next/dist/server/api-utils";
 
 export default function Navibar(){
 
@@ -27,7 +28,7 @@ export default function Navibar(){
       const neonChainId = '0xe9ac0ce'
       if (chainID != neonChainId) {
         setCorrectNet(false)
-        alert("You are not connected to the sepolia testnet!")
+        alert("You are not connected to the NeonEVM testnet!")
         return
       }
       else {
@@ -60,9 +61,6 @@ export default function Navibar(){
           <Navbar.Toggle />
         </div>
       </Navbar>
-      <div>
-      <Homepage isUserLoggedIn={isUserLoggedIn}/>
-      </div>
       </div>
     );
 }
