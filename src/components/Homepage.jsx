@@ -7,9 +7,6 @@ import WalletDisplay from "./WalletDisplay";
 export const Homepage = ({ isUserLoggedIn }) => {
   const [connecting, setConnecting] = useState(false);
 
-
-  
-
   return (
     <div className="flex flex-col gap-y-40">
       <div className="mt-3">
@@ -19,14 +16,13 @@ export const Homepage = ({ isUserLoggedIn }) => {
         <div className="flex flex-row">
           <div className="flex flex-col">
             <div
-              className="w-[1053px] h-[545px] rounded-3xl"
+              className="w-[800px] h-[450px] rounded-3xl bg-cover bg-center bg-black bg-opacity-30 bg-blend-multiply"
               style={{
-                backgroundColor: "blue",
-                backgroundImage: new URL(
-                  "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fukraine-people&psig=AOvVaw2jksKQevHYdKo6ZfdGhpeg&ust=1694491753321000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCPCAherXoYEDFQAAAAAdAAAAABAE"
-                ),
+                backgroundImage: `url('assets/images/morocco-earthquake.jpg')`
               }}
             >
+            
+              <p class="text-gray-600 mt-1"> this is an image</p>
               hi3
             </div>
             <div className="flex flex-row justify-between">

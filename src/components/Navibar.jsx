@@ -1,12 +1,53 @@
 "use client";
 
 import { Navbar ,Button} from "flowbite-react"
+import { Homepage } from "./Homepage";
+import { useState, useEffect } from "react";
 
-export default function Navibar({isUserLoggedIn,currentAccount,connectWallet}){
+export default function Navibar(){
+
+  const [correctNet, setCorrectNet] = useState(false)
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false)
+  const [currentAccount, setCurrentAccount] = useState('')
+
+  useEffect(() => {
+    connectWallet()
+  }, [])
+
+  const connectWallet = async () => {
+    try {
+      const { ethereum } = window
+      if (!ethereum) {
+        alert("MetaMask Not detected")
+        return
+      }
+      let chainID = await ethereum.request({ method: 'eth_chainId' })
+      console.log('Connnected to chain:', chainID)
+
+      const neonChainId = '0xe9ac0ce'
+      if (chainID != neonChainId) {
+        setCorrectNet(false)
+        alert("You are not connected to the sepolia testnet!")
+        return
+      }
+      else {
+        setCorrectNet(true)
+      }
+
+      const account = await ethereum.request({ method: "eth_requestAccounts" })
+      console.log("Found Account:", account[0])
+      setIsUserLoggedIn(true)
+      setCurrentAccount(account[0])
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
     const navstyling = {background:"linear-gradient(90deg, #648DE5 0%, #304C89 62.5%)"};
 
     return (
+      <div>
       <Navbar fluid style={navstyling}>
         <Navbar.Brand href="https://flowbite-react.com">
 
@@ -18,7 +59,10 @@ export default function Navibar({isUserLoggedIn,currentAccount,connectWallet}){
           {!isUserLoggedIn ? <Button onClick={connectWallet}>Connect Wallet</Button> : <Button >{currentAccount}</Button>}
           <Navbar.Toggle />
         </div>
-        
       </Navbar>
+      <div>
+      <Homepage isUserLoggedIn={isUserLoggedIn}/>
+      </div>
+      </div>
     );
 }
