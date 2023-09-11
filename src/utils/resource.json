@@ -1,6 +1,7 @@
 [
   {
     "ngoName": "gatesfoundation",
+    "website":"https://www.gatesfoundation.org/",
     "vision": "Empowering underprivileged children for a brighter future",
     "projects": [
       {
@@ -22,6 +23,7 @@
   },
   {
     "ngoName": "worldpoverty",
+    "website": "https://worldpoverty.io/",
     "vision": "Fighting hunger and poverty in local communities",
     "projects": [
       {
@@ -39,6 +41,7 @@
   },
   {
     "ngoName": "worldwildlife",
+    "website": "https://www.worldwildlife.org/",
     "vision": "Conserving and protecting the environment for future generations",
     "projects": [
       {
@@ -56,6 +59,7 @@
   },
   {
     "ngoName": "animalplanet",
+    "website": "https://www.animalplanet.com/",
     "vision": "Promoting animal welfare and responsible pet ownership",
     "projects": [
       {

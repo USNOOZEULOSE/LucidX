@@ -1,16 +1,40 @@
 "use client";
 
-import { Card, Select, TextInput } from "flowbite-react";
+import { Card, Select, TextInput, Button } from "flowbite-react";
+
+import { ethers } from "ethers";
 import ngoData from "../../../utils/resource.json";
+import Link from "next/link";
 
 // can get id from params?
 export default function donorPagewithId({ params }) {
+  // const [signer,setSigner] = useState(null);
+
   const selectedNGO = ngoData.find((ngo) => ngo.ngoName === params.id);
 
   if (!selectedNGO) {
     return <div>NGO not found</div>;
   }
+  async function makeDonation(event) {
+    event.preventDefault();
+    try {
+      const formData = new FormData(event.target);
+      const response = await fetch("../api/submit", {
+        method: "POST",
+        body: formData,
+      });
 
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Success:", data);
+        event.target.reset(); // Reset the form
+      } else {
+        console.error("Server responded with an error:", response.statusText);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  }
   return (
     <div className="w-full">
       <div className="mt-4">
@@ -21,12 +45,15 @@ export default function donorPagewithId({ params }) {
         className="m-6 p-6 rounded-3xl grid md:grid-cols-2 md:gap-6"
         style={{ background: `#E8E5DA` }}
       >
-        <div>Wallet Address:{}</div>
-        <div>Official Website:{}</div>
-        <div>Wallet Amount:{}</div>
-        <div>Cumulative Unique Owners:{}</div>
-        <div>Total Campaign Funded:{}</div>
-        <div>Campaign on Voting Process:{}</div>
+        <div>Wallet Address: {}</div>
+        <div>
+          Official Website: <Link href={selectedNGO.website}>{selectedNGO.website}</Link>
+
+        </div>
+        <div>Wallet Amount: {}</div>
+        <div>Cumulative Unique Owners: {}</div>
+        <div>Total Campaign Funded: {}</div>
+        <div>Campaign on Voting Process: {selectedNGO.projects.length}</div>
       </div>
       <div>
         <div className="text-3xl font-bold mb-4 ml-6">
@@ -45,25 +72,38 @@ export default function donorPagewithId({ params }) {
             </div>
           </div>
           <div className="flex flex-col gap-y-2">
-            <Select
-              style={{
-                color: "#304C89",
-                fontWeight: 700,
-                fontsize: "36px",
-                background: "white",
-                textAlign: "center",
-              }}
-            >
-              {selectedNGO.projects.map((project) => (
-                <option>{project.name}</option>
-              ))}
-            </Select>
-            <TextInput
-              type="number"
-              addon="USDT"
-              style={{ background: "white", color: "#304C89", fontWeight: 700 }}
-              placeholder="enter amount"
-            />
+            <form onSubmit={makeDonation}>
+              <Select
+                style={{
+                  color: "#304C89",
+                  fontWeight: 700,
+                  fontsize: "36px",
+                  background: "white",
+                  textAlign: "center",
+                }}
+                name="project"
+              >
+                {selectedNGO.projects.map((project) => (
+                  <option value={project.name}>{project.name}</option>
+                ))}
+              </Select>
+              <div className="flex">
+                <TextInput
+                  type="number"
+                  addon="USDT"
+                  style={{
+                    background: "white",
+                    color: "#304C89",
+                    fontWeight: 700,
+                  }}
+                  placeholder="enter amount"
+                  name="amount"
+                />
+                <Button color="white" type="submit">
+                  Submit
+                </Button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
