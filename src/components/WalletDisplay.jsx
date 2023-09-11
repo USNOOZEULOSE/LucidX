@@ -1,10 +1,10 @@
 "use client";
 import { Chart } from "chart.js/auto";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 export default function WalletDisplay({isUserLoggedIn}) {
-  // const organisations = ["Unicef","UNHR","Gate Foundation"]
 
+    console.log(isUserLoggedIn);
   useEffect(() => {
     // Initialize the chart within the useEffect hook to ensure the DOM is ready.
     const beginnerElement = document.getElementById("donations");
