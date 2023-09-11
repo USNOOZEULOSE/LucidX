@@ -52,7 +52,7 @@ export const App = () =>{
     </div>
       <Homepage isUserLoggedIn={isUserLoggedIn}/>
     <div className='mt-auto'>
-      <FooterBoard />
+    <FooterBoard />
     </div>
     </>
   )
