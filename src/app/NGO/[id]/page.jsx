@@ -41,10 +41,11 @@ export default function donorPagewithId({ params }) {
           <div>{"Money donated\n"}</div>
         </div>
       </div>
-      <div className="text-bold text-2xl ml-6">List of Active Listings</div>
-      <div className="flex flex-col gap-y-4 m-6">
+      <div className="font-bold text-3xl ml-6">List of Active Listings</div>
+      <div className=" gap-x-4 m-6 grid grid-cols-2 ">
         {selectedNGO.projects.map((project) => (
           <Card
+            className="w-full h-auto p-4 rounded-lg shadow-lg "
             horizontal
             imgSrc={`url(https://media.istockphoto.com/id/956468886/photo/elderly-woman-sitting-at-the-table-counting-money-in-her-wallet.jpg?s=612x612&w=0&k=20&c=79-BGvIgkU-68-2q7bCS1Y39bjohmz9fe5hvm6tg2lo=)`}
           >
