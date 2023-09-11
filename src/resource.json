@@ -2,22 +2,22 @@
 
   [
   {
-    "ngoName": "NGO1",
+    "ngoName": "unicef",
     "vision": "Empowering underprivileged children for a brighter future",
     "projects": ["Education for All", "Healthcare Initiative", "Women's Empowerment"]
   },
   {
-    "ngoName": "NGO2",
+    "ngoName": "gatesfoundation",
     "vision": "Fighting hunger and poverty in local communities",
     "projects": ["Food Distribution Program", "Microfinance for Entrepreneurs"]
   },
   {
-    "ngoName": "NGO3",
+    "ngoName": "worldhunger",
     "vision": "Conserving and protecting the environment for future generations",
     "projects": ["Reforestation Project", "Clean Water Initiative"]
   },
   {
-    "ngoName": "NGO4",
+    "ngoName": "animalplanet",
     "vision": "Promoting animal welfare and responsible pet ownership",
     "projects": ["Animal Shelter and Adoption Program", "Spay/Neuter Campaign"]
   }

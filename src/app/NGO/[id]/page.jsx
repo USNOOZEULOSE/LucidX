@@ -1,26 +1,49 @@
 "use client";
-import { useEffect, useState } from "react";
-import { Route, useLocation } from "react-router-dom";
+
+import { Card } from "flowbite-react";
 import ngoData from "/Users/sweekiatwong/Documents/GitHub/TrustMarkers/src/resource.json";
 // can get id from params?
 export default function donorPagewithId({ params }) {
-    const [ngo,setNgo] = useState(null);
 
+  const selectedNGO = ngoData.find((ngo) => ngo.ngoName === params.id);
 
-  console.log(ngoData);
-    useEffect(()=>{
-        for(let i=0;i<ngoData.length;i++){
-            console.log(ngoData[i].ngoName)
-            if(ngoData[i].ngoName == params.id){
-                setNgo(ngoData[i]);
-            }
-        }
-        console.log(ngo);
-    },[ngoData])
+  if (!selectedNGO) {
+    return <div>NGO not found</div>;
+  }
+
   return (
-    <div>
-      
-      
+    <div className="w-full">
+      <div className="mt-4">
+        <h1 className="text-4xl text-center">{selectedNGO.ngoName}</h1>
+        <p className="text-2xl text-center">{selectedNGO.vision}</p>
+      </div>
+      <div className="m-6 p-6 bg-gray-400 rounded-3xl grid md:grid-cols-2 md:gap-6">
+        <div>Wallet Address:{}</div>
+        <div>Official Website:{}</div>
+        <div>Wallet Amount:{}</div>
+        <div>Cumulative Unique Owners:{}</div>
+        <div>Total Campaign Funded:{}</div>
+        <div>Campaign on Voting Process:{}</div>
+      </div>
+      <div>
+        <div className="text-3xl font-bold mb-4">
+          Your Donation Makes a Difference
+        </div>
+        <div
+          className="m-6 p-6 rounded-3xl drop-shadow-lg flex items-center"
+          style={{
+            background: `linear-gradient(0deg, rgba(158, 183, 229, 0.54) 3.17%, rgba(158, 183, 229, 0.00) 147.39%);`,
+          }}
+        >
+          <div>Money donated </div>
+      </div>
+      </div>
+      <div className="text-bold text-2xl">List of Active Listings</div>
+      <ul>
+        {selectedNGO.projects.map((project, index) => (
+          <li key={index}>{project}</li>
+        ))}
+      </ul>
     </div>
   );
 }
