@@ -1,26 +1,30 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Route, useLocation } from "react-router-dom";
-import ngoData from "/Users/sweekiatwong/Documents/GitHub/TrustMarkers/src/resource.json";
+import ngoData from "../../../utils/resource.json";
 // can get id from params?
 export default function donorPagewithId({ params }) {
-    const [ngo,setNgo] = useState(null);
-
+  const [ngo,setNgo] = useState(null);
 
   console.log(ngoData);
-    useEffect(()=>{
-        for(let i=0;i<ngoData.length;i++){
-            console.log(ngoData[i].ngoName)
-            if(ngoData[i].ngoName == params.id){
-                setNgo(ngoData[i]);
-            }
-        }
-        console.log(ngo);
-    },[ngoData])
+  useEffect(()=>{
+      for(let i=0;i<ngoData.length;i++){
+          console.log(ngoData[i].ngoName)
+          if(ngoData[i].ngoName == params.id){
+              setNgo(ngoData[i]);
+          }
+      }
+      console.log(ngo);
+  },[ngoData])
   return (
     <div>
-      
-      
-    </div>
+      {ngoData.map( ngo => {
+        return(
+          <div>
+            {ngo.ngoName}
+          </div>
+        )
+      })}  
+    </div>  
   );
 }
