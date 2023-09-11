@@ -65,7 +65,7 @@ export default function WalletDisplay({isUserLoggedIn}) {
         },
       },
     });
-  }, []);
+  }, [isUserLoggedIn]);
   return (
     <div>
         {isUserLoggedIn?<div className="flex flex-row">
