@@ -1,7 +1,7 @@
 "use client";
 
 import { Card } from "flowbite-react";
-import ngoData from "../../../resource.json";
+import ngoData from "../../../utils/resource.json";
 // can get id from params?
 export default function donorPagewithId({ params }) {
 
