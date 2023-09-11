@@ -1,12 +1,7 @@
 "use client";
 import { Chart } from "chart.js/auto";
-import { useState,useEffect } from "react";
-import { Button } from "flowbite-react";
 
-
-export default function WalletDisplay() {
-  const [connecting, setConnecting] = useState(false);
-  const [connected, setConnected] = useState(true);
+export default function WalletDisplay({isUserLoggedIn}) {
   // const organisations = ["Unicef","UNHR","Gate Foundation"]
 
   useEffect(() => {
@@ -72,7 +67,7 @@ export default function WalletDisplay() {
   }, []);
   return (
     <div>
-      {connected ? (
+      {!isUserLoggedIn ? (
         <div className="flex flex-row">
           <div className="flex flex-col w-1/2">
             <div className="text-4xl font-bold m-4">Hello, Welcome to LucidX</div>
@@ -87,15 +82,7 @@ export default function WalletDisplay() {
       ) : (
         <div className="bg-gradient-to-t from-indigo-300 to-indigo-300 w-full h-[500px] flex items-center justify-center">
           <div className="w-[819px] h-[300px] bg-white bg-opacity-60 rounded-3xl flex items-center justify-center">
-            <Button
-              className="bg-transparent text-black"
-              onClick={() => {
-                setConnecting(true);
-              }}
-              disabled={connecting}
-            >
-              {connecting ? "Please Hold" : "Please connect your wallet"}
-            </Button>
+            <h1>Please connect</h1>
           </div>
         </div>
       )}

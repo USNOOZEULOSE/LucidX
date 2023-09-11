@@ -1,7 +1,5 @@
 import './globals.css'
 // import { Inter } from 'next/font/google'
-import Navibar from '@/components/Navibar'
-import FooterBoard from '@/components/Footer'
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -11,17 +9,12 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       <body >
         <div className="min-h-screen flex flex-col ">
-          <div className='sticky top-0'>
-            <Navibar />
-          </div>
           {children}
-          <div className='mt-auto'>
-            <FooterBoard />
-          </div>
         </div>
       </body>
     </html>
