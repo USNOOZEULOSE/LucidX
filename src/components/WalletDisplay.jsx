@@ -1,5 +1,6 @@
 "use client";
 import { Chart } from "chart.js/auto";
+import { useEffect } from "react";
 
 export default function WalletDisplay({isUserLoggedIn}) {
   // const organisations = ["Unicef","UNHR","Gate Foundation"]
