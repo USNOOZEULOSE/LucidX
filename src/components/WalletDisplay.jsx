@@ -56,6 +56,14 @@ export default function WalletDisplay() {
           y: {
             grid: { display: false },
           },
+          r: {
+            ticks: {
+              backdropPadding: {
+                x: 10,
+                y: 4,
+              },
+            },
+          },
         },
       },
     });

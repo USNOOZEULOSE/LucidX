@@ -29,7 +29,7 @@ export default function donorPagewithId({ params }) {
         <div>Campaign on Voting Process:{}</div>
       </div>
       <div>
-        <div className="text-3xl font-bold mb-4">
+        <div className="text-3xl font-bold mb-4 ml-6">
           Your Donation Makes a Difference
         </div>
         <div
@@ -41,12 +41,25 @@ export default function donorPagewithId({ params }) {
           <div>{"Money donated\n"}</div>
         </div>
       </div>
-      <div className="text-bold text-2xl">List of Active Listings</div>
-      <ul>
-        {selectedNGO.projects.map((project, index) => (
-          <li key={index}>{project}</li>
+      <div className="text-bold text-2xl ml-6">List of Active Listings</div>
+      <div className="flex flex-col gap-y-4 m-6">
+        {selectedNGO.projects.map((project) => (
+          <Card
+            horizontal
+            imgSrc={`url(https://media.istockphoto.com/id/956468886/photo/elderly-woman-sitting-at-the-table-counting-money-in-her-wallet.jpg?s=612x612&w=0&k=20&c=79-BGvIgkU-68-2q7bCS1Y39bjohmz9fe5hvm6tg2lo=)`}
+          >
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              {project}
+            </h5>
+            <div className="font-normal text-gray-700 dark:text-gray-400">
+              <div>
+                Here are the biggest enterprise technology acquisitions of 2021
+                so far, in reverse chronological order.
+              </div>
+            </div>
+          </Card>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
