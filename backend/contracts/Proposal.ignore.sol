@@ -1,35 +1,31 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
-// Uncomment this line to use console.log
-import "hardhat/console.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-error Proposal__TargetAmtNotReached();
-error Proposal__NotAbleToRefund();
-error Proposal__NotOnwer();
-error Proposal__NotEnoughAmt();
+contract Proposal is ReentrancyGuard {
 
-contract Proposal {
-
-    //state variables
+    // State variables
     address public s_creator;
     address[] public s_suppliers;
     uint256[] public s_allocation;
     uint256 public s_targetDonation;
     uint256 public s_currentFunding;
     uint256 public s_fundDeadline;
-    address[] public s_donors;
-    uint public s_threshHold;
+    uint256 public s_threshHold;
     IERC20 public usdcToken;
+    bool public proposalPassed = false;
 
     mapping(address => uint256) public s_donorsToFundAmt;
 
-    // events
+    // Events
     event Donated(address indexed donor, uint256 amount);
+    event ProposalExecuted();
+    event DonorRefunded(address indexed donor, uint256 amount);
 
     modifier onlyOwner {
-        if(msg.sender == s_creator){revert Proposal__NotOnwer()};
+        require(msg.sender == s_creator, "Not the proposal owner");
         _;
     }
 
@@ -41,58 +37,61 @@ contract Proposal {
         uint _duration,
         address _usdcTokenAddress
     ) {
+        require(_suppliers.length == _allocation.length, "Mismatch in suppliers and allocation length");
+
         s_creator = _proposalOwner;
         s_suppliers = _suppliers;
         s_allocation = _allocation;
         s_targetDonation = _targetDonation;
-        s_threshHold = _targetDonation / 100 * 30;
+        s_threshHold = (_targetDonation * 70) / 100;
         s_fundDeadline = block.timestamp + _duration;
         usdcToken = IERC20(_usdcTokenAddress);
     }
 
-    function donate(uint _donateAmt) public {
-        if(_donateAmt == 0){revert Proposal__NotEnoughAmt()};
-        bool success = usdcToken.approve(address(this), _donateAmt);
-        if(success){
-            usdcToken.transferFrom(msg.sender, address(this), _donateAmt);
-            s_currentFunding += _donateAmt;
-            s_donorsToFundAmt[msg.sender] += _donateAmt;
-            s_donors.push(msg.sender);
-            emit Donated(msg.sender, _donateAmt);
-        }
-        
+    function donate(uint256 _donateAmt) external nonReentrant {
+        require(block.timestamp <= s_fundDeadline, "Donation period has ended");
+        require(_donateAmt > 0, "Amount should be greater than 0");
+
+        usdcToken.transferFrom(msg.sender, address(this), _donateAmt);
+        s_currentFunding += _donateAmt;
+        s_donorsToFundAmt[msg.sender] += _donateAmt;
+
+        emit Donated(msg.sender, _donateAmt);
     }
 
-    function execute() external onlyOwner {
-        if(s_currentFunding < s_targetDonation){
-            revert Proposal__TargetAmtNotReached();
+    function execute() external onlyOwner nonReentrant {
+        require(s_currentFunding >= s_targetDonation, "Target amount not reached");
+
+        for(uint i = 0; i < s_suppliers.length; i++) {
+            uint256 amtToBePaid = (s_currentFunding * s_allocation[i]) / 100;
+            usdcToken.transfer(s_suppliers[i], amtToBePaid);
         }
-        address[] memory cheapSuppliersArray = s_suppliers;
-        for(uint i=0 ; i < cheapSuppliersArray.length; i++){
-            address supplier = cheapSuppliersArray[i];
-            uint amtToBePaid = s_currentFunding / 100 * s_allocation[i];
-            usdcToken.transfer(supplier, amtToBePaid);
-        }
+
         s_currentFunding = 0;
+        emit ProposalExecuted();
+        proposalPassed = true;
     }
 
-    function refundDonors() external onlyOwner {
-        if(block.timestamp > s_fundDeadline && s_currentFunding <= s_threshHold){
-            address[] memory cheapDonors = s_donors;
-            for(uint i=0; i < cheapDonors.length; i++){
-                address donor = cheapDonors[i];
-                s_donorsToFundAmt[donor] = 0;
-                usdcToken.transfer(donor, s_donorsToFundAmt[cheapDonors[i]]);
-            }
+    function refund() external nonReentrant {
+        require(block.timestamp > s_fundDeadline && s_currentFunding < s_threshHold, "Cannot refund at this time");
+        
+        uint256 refundAmount = s_donorsToFundAmt[msg.sender];
+        require(refundAmount > 0, "No donations to refund");
+
+        s_donorsToFundAmt[msg.sender] = 0;
+        usdcToken.transfer(msg.sender, refundAmount);
+
+        emit DonorRefunded(msg.sender, refundAmount);
+    }
+
+    function fundingPercentage() public view returns (uint256) {
+        return (s_currentFunding * 100) / s_targetDonation;
+    }
+    function isExpired() public view returns(bool){
+        if(block.timestamp > s_fundDeadline){
+            return true;
         }else{
-            revert Proposal__NotAbleToRefund();
+            return false;
         }
     }
-
-    
-
-
 }
-
-
-
