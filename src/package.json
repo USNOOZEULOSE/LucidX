@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.8",
     "autoprefixer": "^10.4.15",
     "bufferutil": "^4.0.7",
     "chart.js": "^4.4.0",
