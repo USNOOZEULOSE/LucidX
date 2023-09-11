@@ -60,9 +60,9 @@ export default function Navibar(){
           <Navbar.Toggle />
         </div>
       </Navbar>
-        <div>
-        <Homepage isUserLoggedIn={isUserLoggedIn}/>
-        </div>
+      <div>
+      <Homepage isUserLoggedIn={isUserLoggedIn}/>
+      </div>
       </div>
     );
 }
