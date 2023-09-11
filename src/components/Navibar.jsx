@@ -5,10 +5,10 @@ export default function Navibar(){
     const navstyling = {background:"linear-gradient(90deg, #648DE5 0%, #304C89 62.5%)"};
     
     return (
-      <Navbar fluid rounded style={navstyling}>
+      <Navbar fluid style={navstyling}>
         <Navbar.Brand href="https://flowbite-react.com">
           <img src="/TrustMarkerLogo.png" />
-          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+          <span className="self-center whitespace-nowrap  text-white text-xl font-semibold dark:text-white">
             TrustMarkers
           </span>
         </Navbar.Brand>
