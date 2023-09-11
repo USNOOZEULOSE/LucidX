@@ -18,7 +18,6 @@ export default function RootLayout({ children }) {
           <div className='sticky top-0'>
             <Navibar />
           </div>
-
           {children}
           <div className='mt-auto'>
             <FooterBoard />
