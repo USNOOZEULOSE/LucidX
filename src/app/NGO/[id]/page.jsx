@@ -17,7 +17,10 @@ export default function donorPagewithId({ params }) {
         <h1 className="text-4xl text-center">{selectedNGO.ngoName}</h1>
         <p className="text-2xl text-center">{selectedNGO.vision}</p>
       </div>
-      <div className="m-6 p-6 bg-gray-400 rounded-3xl grid md:grid-cols-2 md:gap-6">
+      <div
+        className="m-6 p-6 rounded-3xl grid md:grid-cols-2 md:gap-6"
+        style={{ background: `#E8E5DA` }}
+      >
         <div>Wallet Address:{}</div>
         <div>Official Website:{}</div>
         <div>Wallet Amount:{}</div>
@@ -35,8 +38,8 @@ export default function donorPagewithId({ params }) {
             background: `linear-gradient(0deg, rgba(158, 183, 229, 0.54) 3.17%, rgba(158, 183, 229, 0.00) 147.39%);`,
           }}
         >
-          <div>Money donated </div>
-      </div>
+          <div>{"Money donated\n"}</div>
+        </div>
       </div>
       <div className="text-bold text-2xl">List of Active Listings</div>
       <ul>

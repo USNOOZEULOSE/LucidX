@@ -18,11 +18,7 @@ export default function WalletDisplay() {
         {
           label: "Amount donated",
           data: [300, 50, 100],
-          backgroundColor: [
-            "rgb(255, 99, 132)",
-            "rgb(54, 162, 235)",
-            "rgb(255, 205, 86)",
-          ],
+          backgroundColor: ["#ABC5FC", "#304C89", "#648DE5"],
           hoverOffset: 4,
         },
       ],
@@ -45,10 +41,7 @@ export default function WalletDisplay() {
         {
           label: "Amount donated in a year",
           data: [300, 150],
-          backgroundColor: [
-            "rgb(255, 99, 132)",
-            "rgb(54, 162, 235)",
-          ],
+          backgroundColor: ["#304C89", "#304C89"],
           hoverOffset: 4,
         },
       ],

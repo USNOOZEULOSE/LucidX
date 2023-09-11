@@ -13,7 +13,7 @@ export const Homepage = ({ isUserLoggedIn }) => {
   return (
     <div className="flex flex-col gap-y-40">
       <div className="mt-3">
-        {isUserLoggedIn ? <WalletDisplay /> : <div>Please log in</div>}
+        <WalletDisplay /> 
       </div>
       <div>
         <div className="flex flex-row">
