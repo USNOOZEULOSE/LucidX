@@ -1,10 +1,10 @@
 "use client";
 
-import { Card } from "flowbite-react";
+import { Card, Select, TextInput } from "flowbite-react";
 import ngoData from "../../../utils/resource.json";
+
 // can get id from params?
 export default function donorPagewithId({ params }) {
-
   const selectedNGO = ngoData.find((ngo) => ngo.ngoName === params.id);
 
   if (!selectedNGO) {
@@ -33,12 +33,38 @@ export default function donorPagewithId({ params }) {
           Your Donation Makes a Difference
         </div>
         <div
-          className="m-6 p-6 rounded-3xl drop-shadow-lg flex items-center"
+          className="m-6 p-6 rounded-3xl drop-shadow-lg flex items-center justify-between"
           style={{
             background: `linear-gradient(0deg, rgba(158, 183, 229, 0.54) 3.17%, rgba(158, 183, 229, 0.00) 147.39%);`,
           }}
         >
-          <div>{"Money donated\n"}</div>
+          <div>
+            <div className="font-bold ">{"Net Amount Donated"}</div>
+            <div className="font-bold ">
+              <span className="text-3xl">{"0.00"}</span>USDT
+            </div>
+          </div>
+          <div className="flex flex-col gap-y-2">
+            <Select
+              style={{
+                color: "#304C89",
+                fontWeight: 700,
+                fontsize: "36px",
+                background: "white",
+                textAlign: "center",
+              }}
+            >
+              {selectedNGO.projects.map((project) => (
+                <option>{project.name}</option>
+              ))}
+            </Select>
+            <TextInput
+              type="number"
+              addon="USDT"
+              style={{ background: "white", color: "#304C89", fontWeight: 700 }}
+              placeholder="enter amount"
+            />
+          </div>
         </div>
       </div>
       <div className="font-bold text-3xl ml-6">List of Active Listings</div>
@@ -58,9 +84,7 @@ export default function donorPagewithId({ params }) {
               {project.name}
             </h5>
             <div className="font-normal text-gray-900">
-              <div>
-                {project.description}
-              </div>
+              <div>{project.description}</div>
             </div>
           </Card>
         ))}
