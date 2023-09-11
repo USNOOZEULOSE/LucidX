@@ -8,7 +8,7 @@ require("@nomicfoundation/hardhat-ethers");
 
 const proxy_url = 'https://devnet.neonevm.org';
 const network_id = 245022926;
-const privateKeys=["0x3671a05e17126cac89964a1fe92c6ea71c2a21b7c8e0f3452cdf4f9709c7dda4"]
+
 
 subtask(TASK_COMPILE_SOLIDITY_GET_SOURCE_PATHS).setAction(async (_, __, runSuper) => {
   // Get the list of source paths that would normally be passed to the Solidity compiler
@@ -24,7 +24,7 @@ module.exports = {
     },
     neonlabs: { 
       url: proxy_url,
-      accounts: privateKeys,
+      accounts: [process.env.PRIVATE_KEY],
       network_id: network_id,
       chainId: network_id,
       allowUnlimitedContractSize: false,

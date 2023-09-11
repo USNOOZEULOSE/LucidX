@@ -9,7 +9,8 @@ import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 contract Verification is ERC1155 {
     mapping(address => bool) public isVerified;
     uint256 public constant VERIFIED = 1; 
-    
+    event Verified(address indexed supplier,uint256 timestamp);
+
     constructor() ERC1155("VerificationToken") {}
 
     function verify(address _supplier) public {
@@ -17,6 +18,7 @@ contract Verification is ERC1155 {
         require(isVerified[_supplier]!=true, "Supplier is already verified");
         // Add your verification logic here
         isVerified[_supplier] = true;
+        emit Verified(_supplier, block.timestamp);
     }
 
     function mint() public{
@@ -25,8 +27,3 @@ contract Verification is ERC1155 {
     }
 
 }
-
-
-
-
-

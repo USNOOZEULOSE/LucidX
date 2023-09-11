@@ -1,4 +1,4 @@
-// File: /Users/sweekiatwong/Documents/GitHub/TrustMarkers/src/app/layout.js
+// File: C:\Users\User\Documents\SMU\hackathon\ETHSG Hackathon\TrustMarkersReal\TrustMarkers\src\app\layout.js
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
