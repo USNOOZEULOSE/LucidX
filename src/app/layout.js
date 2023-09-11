@@ -60,11 +60,8 @@ export default function RootLayout({ children }) {
               connectWallet={connectWallet}
             />
           </div>
-          {/* {children} */}
-          {cloneElement(children, {
-            isUserLoggedIn: isUserLoggedIn,
-            currentAccount: currentAccount,
-          })}
+          {children}
+          
           <div className='mt-auto'>
           <FooterBoard />
           </div>
