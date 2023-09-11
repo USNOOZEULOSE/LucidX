@@ -12,9 +12,7 @@ export const App = () =>{
     <>
     <div className='sticky top-0'>
     </div>
-      <Homepage />
     <div className='mt-auto'>
-
     </div>
     </>
   )
