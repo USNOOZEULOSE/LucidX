@@ -6,9 +6,6 @@ import WalletDisplay from "./WalletDisplay";
 
 export const Homepage = ({ isUserLoggedIn }) => {
   const [connecting, setConnecting] = useState(false);
-  
-
-  
 
   return (
     <div className="flex flex-col gap-y-40">

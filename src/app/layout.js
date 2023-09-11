@@ -13,60 +13,15 @@ import FooterBoard from '@/components/Footer';
 // }
 
 export default function RootLayout({ children }) {
-  const [correctNet, setCorrectNet] = useState(false);
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-  const [currentAccount, setCurrentAccount] = useState("");
-
-  useEffect(() => {
-    connectWallet();
-  }, []);
-
-  const connectWallet = async () => {
-    try {
-      const { ethereum } = window;
-      if (!ethereum) {
-        alert("MetaMask Not detected");
-        return;
-      }
-      let chainID = await ethereum.request({ method: "eth_chainId" });
-      console.log("Connnected to chain:", chainID);
-
-      const neonChainId = "0xe9ac0ce";
-      if (chainID != neonChainId) {
-        setCorrectNet(false);
-        alert("You are not connect to NeonEvm testnet!");
-        return;
-      } else {
-        setCorrectNet(true);
-      }
-
-      const account = await ethereum.request({ method: "eth_requestAccounts" });
-      console.log("Found Account:", account[0]);
-      setIsUserLoggedIn(true);
-      setCurrentAccount(account[0]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <html lang="en">
       <body>
         <div className="min-h-screen flex flex-col ">
-          <div className=''>
-            <Navibar
-              isUserLoggedIn={isUserLoggedIn}
-              currentAccount={currentAccount}
-              connectWallet={connectWallet}
-            />
-          </div>
-          {/* {children} */}
-          {cloneElement(children, {
-            isUserLoggedIn: isUserLoggedIn,
-            currentAccount: currentAccount,
-          })}
-          <div className='mt-auto'>
-          <FooterBoard />
+          <Navibar />
+          {children}
+          <div className='mt-auto'>          
+            <FooterBoard />
           </div>
         </div>
       </body>
