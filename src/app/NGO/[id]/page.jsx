@@ -14,7 +14,7 @@ export default function donorPagewithId({ params }) {
   useEffect(()=>{
     //ethers code to pull out current total amount of money donated to the cause
 
-
+    // setAmountDonated("potential constant of total amount donated");
     //at the end set that total amount to amountDOnated using setAmountDonated
     //my functions will take care of the rest
   },[])
@@ -28,12 +28,6 @@ export default function donorPagewithId({ params }) {
   }
   async function makeDonation(event) {
     event.preventDefault();
-//ethers code for blockchain
-
-
-
-
-
     setAmountDonated(parseInt(amountDonated)+parseInt(amountPrepared));
   
   }
