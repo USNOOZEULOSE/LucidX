@@ -1,14 +1,25 @@
 "use client";
 
 import { Card, Select, TextInput, Button } from "flowbite-react";
-
+import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import ngoData from "../../../utils/resource.json";
 import Link from "next/link";
 
 // can get id from params?
 export default function donorPagewithId({ params }) {
-  // const [signer,setSigner] = useState(null);
+  const [signer,setSigner] = useState(null);
+  const [amountDonated,setAmountDonated] = useState(0.00);
+  const [amountPrepared,setAmountPrepared] = useState(0.00);
+  useEffect(()=>{
+    //ethers code to pull out current total amount of money donated to the cause
+
+
+    //at the end set that total amount to amountDOnated using setAmountDonated
+    //my functions will take care of the rest
+  },[])
+
+
 
   const selectedNGO = ngoData.find((ngo) => ngo.ngoName === params.id);
 
@@ -17,23 +28,14 @@ export default function donorPagewithId({ params }) {
   }
   async function makeDonation(event) {
     event.preventDefault();
-    try {
-      const formData = new FormData(event.target);
-      const response = await fetch("../api/submit", {
-        method: "POST",
-        body: formData,
-      });
+//ethers code for blockchain
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log("Success:", data);
-        event.target.reset(); // Reset the form
-      } else {
-        console.error("Server responded with an error:", response.statusText);
-      }
-    } catch (error) {
-      console.error("An error occurred:", error);
-    }
+
+
+
+
+    setAmountDonated(parseInt(amountDonated)+parseInt(amountPrepared));
+  
   }
   return (
     <div className="w-full">
@@ -47,12 +49,12 @@ export default function donorPagewithId({ params }) {
       >
         <div>Wallet Address: {}</div>
         <div>
-          Official Website: <Link href={selectedNGO.website}>{selectedNGO.website}</Link>
-
+          Official Website:{" "}
+          <Link href={selectedNGO.website}>{selectedNGO.website}</Link>
         </div>
-        <div>Wallet Amount: {}</div>
-        <div>Cumulative Unique Owners: {}</div>
-        <div>Total Campaign Funded: {}</div>
+        <div>Wallet Amount: {"10000 USDC"}</div>
+        <div>Cumulative Unique Owners: {"1"}</div>
+        <div>Total Campaign Funded: {selectedNGO.projects.length}</div>
         <div>Campaign on Voting Process: {selectedNGO.projects.length}</div>
       </div>
       <div>
@@ -68,7 +70,7 @@ export default function donorPagewithId({ params }) {
           <div>
             <div className="font-bold ">{"Net Amount Donated"}</div>
             <div className="font-bold ">
-              <span className="text-3xl">{"0.00"}</span>USDT
+              <span className="text-3xl">{amountDonated}</span>USDT
             </div>
           </div>
           <div className="flex flex-col gap-y-2">
@@ -98,6 +100,9 @@ export default function donorPagewithId({ params }) {
                   }}
                   placeholder="enter amount"
                   name="amount"
+                  onChange={(e) => {
+                    setAmountPrepared(e.target.value);
+                  }}
                 />
                 <Button color="white" type="submit">
                   Submit
@@ -119,7 +124,7 @@ export default function donorPagewithId({ params }) {
             }}
             horizontal
             imgSrc="https://media.istockphoto.com/id/956468886/photo/elderly-woman-sitting-at-the-table-counting-money-in-her-wallet.jpg?s=612x612&w=0&k=20&c=79-BGvIgkU-68-2q7bCS1Y39bjohmz9fe5hvm6tg2lo="
-            href= {"./" + params.id + "/" + project.name}
+            href={"./" + params.id + "/" + project.name}
           >
             <h5 className="text-2xl font-bold tracking-tight text-gray-900">
               {project.name}
