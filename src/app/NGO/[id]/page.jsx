@@ -14,8 +14,6 @@ export default function donorPagewithId({ params }) {
 
   const selectedNGO = ngoData.find((ngo) => ngo.ngoName === params.id);
   
-  async function 
-
   if (!selectedNGO) {
     return <div>NGO not found</div>;
   }

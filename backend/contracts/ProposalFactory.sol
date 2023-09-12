@@ -11,19 +11,11 @@ contract ProposalFactory {
     address[] public proposals;
     Verification public verification;
     address public constant USDC = 0x512E48836Cd42F3eB6f50CEd9ffD81E0a7F15103;
-<<<<<<< HEAD
-
-    event ProposalCreated(address indexed _Creator, string indexed eventName, uint256 targetDonation);
-
-    constructor(){
-        verification = Verification(0x40D8ECb21Fbc2C8D591017B3dEc3c6ae1FBCa7D8); 
-=======
     mapping(address=>mapping(string=>address)) CreatorToProposal;
     event ProposalCreated(address indexed _Creator, string indexed eventName, uint256 targetDonation);
 
     constructor(){
         verification = Verification(0xc3239E191D119738912F38c5bC60A1A765E6711b); 
->>>>>>> backend
     }
 
     function createProposal(
@@ -31,22 +23,13 @@ contract ProposalFactory {
         uint256 _targetDonation,
         uint256[] memory _allocation, 
         uint256 _duration,
-<<<<<<< HEAD
-        string memory _eventName) public {
-=======
         string memory _eventName) public  returns(address) {
->>>>>>> backend
         for(uint256 i = 0; i<_suppliers.length;i++){
             require(verification.balanceOf(_suppliers[i],1) == 1, 
                 string(abi.encodePacked("Supplier with address ", _suppliers[i], "is not verified")));
         }
         Proposal newProposal = new Proposal(msg.sender,_suppliers, _targetDonation, _allocation, _duration, USDC, _eventName);
         proposals.push(address(newProposal));
-<<<<<<< HEAD
-        emit ProposalCreated(msg.sender, _eventName, _targetDonation);
-    }
-
-=======
         CreatorToProposal[msg.sender][_eventName] = address(newProposal);
         emit ProposalCreated(msg.sender, _eventName, _targetDonation);
         return address(newProposal);
@@ -72,6 +55,5 @@ contract ProposalFactory {
     function getProposal(uint256 _index) public view returns(address){
         return proposals[_index];
     }
->>>>>>> backend
 }
 
