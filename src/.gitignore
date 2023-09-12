@@ -9,11 +9,14 @@
 /coverage
 
 # next.js
+<<<<<<< HEAD
+=======
 src/.next/
 src/.next/cache/
 src/.next/server/
 src/next/static/
 src/.next/app-build-manifest
+>>>>>>> 7e3cbd4595736f8c541a913017fb62d1b767d517
 /.next/
 /out/
 
