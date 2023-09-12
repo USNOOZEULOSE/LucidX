@@ -56,7 +56,7 @@ export const Homepage = ({ isUserLoggedIn }) => {
                 background: "rgba(158, 183, 229, 0.33)",
                 boxShadow: "0px 3px 13px 7px rgba(0, 0, 0, 0.25)",
               }}
-              imgSrc="/../public/assets/images/morocco-earthquake.jpg"
+              imgSrc="/assets/images/northern-forest.jpg"
               imgAlt="WorldWildLife"
               href={"/ngo/worldwildlife"}
             > 
@@ -68,7 +68,7 @@ export const Homepage = ({ isUserLoggedIn }) => {
                 background: "rgba(158, 183, 229, 0.33)",
                 boxShadow: "0px 3px 13px 7px rgba(0, 0, 0, 0.25)",
               }}
-              imgSrc="/../public/assets/images/morocco-earthquake.jpg"
+              imgSrc="/assets/images/Billgates.jpg"
               imgAlt="Gatesfoundation"
               href={"/ngo/gatesfoundation"}
             > 
@@ -80,7 +80,7 @@ export const Homepage = ({ isUserLoggedIn }) => {
                 background: "rgba(158, 183, 229, 0.33)",
                 boxShadow: "0px 3px 13px 7px rgba(0, 0, 0, 0.25)",
               }}
-              imgSrc="/../public/assets/images/morocco-earthquake.jpg"
+              imgSrc="/assets/images/animalplanet.jpg"
               imgAlt="AnimalPlanet"
               href={"/ngo/animalplanet"}
             > 

@@ -34,12 +34,12 @@ export default function WalletDisplay() {
     }
 
     const data1 = {
-      labels: ["2015", "2014"],
+      labels: ["2023", "2022" ,"2021"],
       datasets: [
         {
           label: "Amount donated in a year",
-          data: [300, 150],
-          backgroundColor: ["#304C89", "#304C89"],
+          data: [300, 150 , 250],
+          backgroundColor: ["#304C89", "#304C89" ,"#2321a3"],
           hoverOffset: 4,
         },
       ],

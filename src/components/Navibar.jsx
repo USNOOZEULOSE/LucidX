@@ -4,6 +4,7 @@ import { Navbar ,Button} from "flowbite-react"
 import { Homepage } from "./Homepage";
 import { useState, useEffect } from "react";
 import { redirect } from "next/dist/server/api-utils";
+import Image from 'next/image'
 
 export default function Navibar(){
 
@@ -51,7 +52,8 @@ export default function Navibar(){
       <div>
       <Navbar fluid style={navstyling}>
         <Navbar.Brand href="http://localhost:3000">
-          <span className="self-center whitespace-nowrap  text-white text-xl font-semibold dark:text-white">
+          <Image src="/assets/images/TrustMarkerLogo.png" width={70} height={70} alt="Logo" />
+          <span className="self-center whitespace-nowrap  text-white text-2xl font-semibold dark:text-white">
             LucidX
           </span>
         </Navbar.Brand>
