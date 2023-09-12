@@ -2,26 +2,43 @@
 
 import { Card, Select, TextInput, Button } from "flowbite-react";
 import { useEffect, useState } from "react";
-import { ethers } from "ethers";
+const ethers = require("ethers");
 import ngoData from "../../../utils/resource.json";
 import Link from "next/link";
-import hre from "hardhat";
-import {abi} from "../artifacts/contracts/Verification.sol/Verification.json";
-import Contract from "@ethersproject/contracts";
+import {abi} from "../../../utils/abi";
+import Contract from "@ethersproject/contracts";  
+require('dotenv').config();
+
 
 // can get id from params?
 export default function donorPagewithId({ params }) {
   const [signer,setSigner] = useState(null);
   const [amountDonated,setAmountDonated] = useState(0.00);
   const [amountPrepared,setAmountPrepared] = useState(0.00);
+
   useEffect(()=>{
-    //ethers code to pull out current total amount of money donated to the cause
+    const fetchTotalDonations = async () => {
+      try {
+        // 1. Get provider
+        const provider = new ethers.JsonRpcProvider("https://devnet.neonevm.org"); 
+        const signer = new ethers.Wallet(process.env.PRIVATE_KEY,provider);
 
-    // setAmountDonated("potential constant of total amount donated");
-    //at the end set that total amount to amountDOnated using setAmountDonated
-    //my functions will take care of the rest
-  },[])
-
+        // 2. Set up a contract instance
+        const contractAddress = "0x474f1c3A291c8F1888fa04aa8c545577b7B01b70"; // Make sure to replace with your contract's address
+        const contract = new ethers.Contract(contractAddress, abi, signer);
+        
+    
+        // 3. Make the async call
+        const totalDonations = await contract.getTotalAmountDonated("0x0F6debd8F1dF1D010cc728466E659bc7313cC273");
+        setAmountDonated(ethers.formatUnits(totalDonations, 6)); // Assuming the value is in wei, adjust if not.
+        
+      } catch (error) {
+        console.error("An error occurred:", error);
+      }
+    };
+    fetchTotalDonations();
+  }, []);
+   
 
 
   const selectedNGO = ngoData.find((ngo) => ngo.ngoName === params.id);
@@ -44,7 +61,7 @@ export default function donorPagewithId({ params }) {
         className="m-6 p-6 rounded-3xl grid md:grid-cols-2 md:gap-6"
         style={{ background: `#E8E5DA` }}
       >
-        <div>Wallet Address: {}</div>
+        <div>Wallet Address: {"0xB66B65bcB62a362743F757449d15c27423B5b1C2"}</div>
         <div>
           Official Website:{" "}
           <Link href={selectedNGO.website}>{selectedNGO.website}</Link>
