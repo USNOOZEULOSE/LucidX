@@ -1,6 +1,7 @@
-import { Button } from "flowbite-react";
+import { Card, Button } from "flowbite-react";
 import { redirect } from "next/dist/server/api-utils";
 import Link from "next/link";
+import Image from 'next/image';
 import React, { createContext, useState } from "react";
 import WalletDisplay from "./WalletDisplay";
 
@@ -48,30 +49,42 @@ export const Homepage = ({ isUserLoggedIn }) => {
             </div>
           </div>
           <div className="flex flex-col gap-4 flex-grow ml-3">
-            <div
+          <Card
               className="w-200 h-100 rounded-3xl flex-grow "
               style={{
-                backgroundImage: `url('assets/images/morocco-earthquake.jpg')`,
+                borderRadius: "40px",
+                background: "rgba(158, 183, 229, 0.33)",
+                boxShadow: "0px 3px 13px 7px rgba(0, 0, 0, 0.25)",
               }}
-            >
-              <Link href={"/ngo/worldwildlife"}>hi</Link>
-            </div>
-            <div
-              className="w-200 h-100 rounded-3xl flex-grow"
+              imgSrc="/../public/assets/images/morocco-earthquake.jpg"
+              imgAlt="WorldWildLife"
+              href={"/ngo/worldwildlife"}
+            > 
+          </Card>
+          <Card
+              className="w-200 h-100 rounded-3xl flex-grow "
               style={{
-                backgroundImage: `url('assets/images/morocco-earthquake.jpg')`,
+                borderRadius: "40px",
+                background: "rgba(158, 183, 229, 0.33)",
+                boxShadow: "0px 3px 13px 7px rgba(0, 0, 0, 0.25)",
               }}
-            >
-              hi
-            </div>
-            <div
-              className="w-200 h-100 rounded-3xl flex-grow"
+              imgSrc="/../public/assets/images/morocco-earthquake.jpg"
+              imgAlt="Gatesfoundation"
+              href={"/ngo/gatesfoundation"}
+            > 
+          </Card>
+          <Card
+              className="w-200 h-100 rounded-3xl flex-grow "
               style={{
-                backgroundImage: `url('assets/images/morocco-earthquake.jpg')`,
+                borderRadius: "40px",
+                background: "rgba(158, 183, 229, 0.33)",
+                boxShadow: "0px 3px 13px 7px rgba(0, 0, 0, 0.25)",
               }}
-            >
-              hi
-            </div>
+              imgSrc="/../public/assets/images/morocco-earthquake.jpg"
+              imgAlt="AnimalPlanet"
+              href={"/ngo/animalplanet"}
+            > 
+          </Card>
             <div className=" ">
               <Button className="mb-auto " href="/">
                 More Organisations

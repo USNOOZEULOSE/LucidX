@@ -5,9 +5,8 @@ import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import ngoData from "../../../utils/resource.json";
 import Link from "next/link";
-import hre from "hardhat";
-import {abi} from "../artifacts/contracts/Verification.sol/Verification.json";
-import Contract from "@ethersproject/contracts";
+// import {abi} from "../artifacts/contracts/Verification.sol/Verification.json";
+// import Contract from "@ethersproject/contracts";
 
 // can get id from params?
 export default function donorPagewithId({ params }) {
@@ -21,8 +20,6 @@ export default function donorPagewithId({ params }) {
     //at the end set that total amount to amountDOnated using setAmountDonated
     //my functions will take care of the rest
   },[])
-
-
 
   const selectedNGO = ngoData.find((ngo) => ngo.ngoName === params.id);
   
