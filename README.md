@@ -75,6 +75,8 @@ LucidX provides end-to-end donation tracking on the blockchain with verified int
 ### Project Summary
 LucidX is a revolutionary platform that enables charities to raise donations on-chain from the global community through proposals. These proposals provide donors with the transparency that is lacking in the industry, while the blockchain ensures a clear, immutable record of each donation's journey. Donors can track exactly where their money goes, boosting their confidence and trust in the donation process.
 
+Videos on the Application can be found [Notion](https://screeching-erica-f50.notion.site/Videos-9db9ecd0770b4c519fd3459a80a01e11?pvs=4).
+
 ### Team Members
 
 | Full Name           | Email                        |
@@ -111,3 +113,4 @@ LucidX is a revolutionary platform that enables charities to raise donations on-
 3. **Supplier Scoring System**
    - **Transparency Incentives**: Suppliers are encouraged to maintain transparency and provide regular updates to donors.
    - **Merit-Based Opportunities**: Suppliers with higher ratings will have increased opportunities to collaborate with non-profit organizations.
+
