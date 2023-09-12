@@ -58,7 +58,7 @@ export const Homepage = ({ isUserLoggedIn }) => {
               }}
               imgSrc="/assets/images/northern-forest.jpg"
               imgAlt="WorldWildLife"
-              href={"/ngo/worldwildlife"}
+              href={"/NGO/worldwildlife"}
             > 
           </Card>
           <Card
@@ -70,7 +70,7 @@ export const Homepage = ({ isUserLoggedIn }) => {
               }}
               imgSrc="/assets/images/Billgates.jpg"
               imgAlt="Gatesfoundation"
-              href={"/ngo/gatesfoundation"}
+              href={"/NGO/gatesfoundation"}
             > 
           </Card>
           <Card
@@ -82,7 +82,7 @@ export const Homepage = ({ isUserLoggedIn }) => {
               }}
               imgSrc="/assets/images/animalplanet.jpg"
               imgAlt="AnimalPlanet"
-              href={"/ngo/animalplanet"}
+              href={"/NGO/animalplanet"}
             > 
           </Card>
             <div className=" ">
