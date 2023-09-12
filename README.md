@@ -2,15 +2,31 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+* [NodeJS](https://nodejs.org/en)
+
+## Setup of Backend Folder
+1) Download the Backend's dependencies.
+    ```bash
+    cd backend
+    npm i 
+    ```
+
+
+## Setup of Frontend Folder
+1) Download the Frontend's dependencies.
+    ```bash
+    cd frontend
+    npm i 
+    ```
+2) Spin off a localhost to start using the service.
+    ```bash
+    npm run dev
+    ```
+
+
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
