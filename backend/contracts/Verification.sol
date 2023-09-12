@@ -20,9 +20,4 @@ contract Verification is ERC1155 {
         require(isVerified[msg.sender]==true, "You are not verified for minting");
         _mint(msg.sender, VERIFIED, 1, "");
     }
-<<<<<<< HEAD
-
 }
-=======
-}
->>>>>>> backend
